@@ -17,7 +17,10 @@ app.use(cors({
 
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: ['https://jewellery-shop-frontend.vercel.app','https://jewellery-shop-admin.vercel.app'],
+}));
+
 
 
 // Database Connection With MongoDB
