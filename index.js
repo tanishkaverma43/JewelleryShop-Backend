@@ -22,16 +22,7 @@ app.use(cors({
 
 // Database Connection With MongoDB
 // mongoose.connect("");
-mongoose.connect("mongodb+srv://tanishkav384:W6kuS0qYEMObOiJn@cluster0.t3omiqv.mongodb.net/newmongodb", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => {
-  console.log("✅ MongoDB connected successfully");
-})
-.catch((error) => {
-  console.error("❌ MongoDB connection failed:", error.message);
-});
+
 // paste your mongoDB Connection string above with password
 // password should not contain '@' special character
 
@@ -262,4 +253,15 @@ app.post("/removeproduct", async (req, res) => {
 app.listen(port, (error) => {
   if (!error) console.log("Server Running on port " + port);
   else console.log("Error : ", error);
+});
+
+mongoose.connect("mongodb+srv://tanishkav384:W6kuS0qYEMObOiJn@cluster0.t3omiqv.mongodb.net/newmongodb", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => {
+  console.log("✅ MongoDB connected successfully");
+})
+.catch((error) => {
+  console.error("❌ MongoDB connection failed:", error.message);
 });
