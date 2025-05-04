@@ -21,8 +21,17 @@ app.use(cors({
 
 
 // Database Connection With MongoDB
-mongoose.connect("mongodb+srv://tanishkaverma43:89gnJR38dWbxuslu@cluster0.amcsipm.mongodb.net/e-commercee");
-
+// mongoose.connect("");
+mongoose.connect("mongodb+srv://tanishkaverma43:89gnJR38dWbxuslu@cluster0.amcsipm.mongodb.net/e-commercee", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => {
+  console.log("✅ MongoDB connected successfully");
+})
+.catch((error) => {
+  console.error("❌ MongoDB connection failed:", error.message);
+});
 // paste your mongoDB Connection string above with password
 // password should not contain '@' special character
 
