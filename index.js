@@ -249,12 +249,6 @@ app.post("/removeproduct", async (req, res) => {
   res.json({ success: true, name: req.body.name })
 });
 
-// Starting Express Server
-app.listen(port, (error) => {
-  if (!error) console.log("Server Running on port " + port);
-  else console.log("Error : ", error);
-});
-
 mongoose.connect("mongodb+srv://tanishkav384:W6kuS0qYEMObOiJn@cluster0.t3omiqv.mongodb.net/newmongodb", {
   useNewUrlParser: true,
   useUnifiedTopology: true
