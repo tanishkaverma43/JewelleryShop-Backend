@@ -7,15 +7,16 @@ const path = require("path");
 const cors = require("cors");
 const port = process.env.PORT || 4000;
 
-app.use(express.json());
-app.use(cors({
-  origin: ['https://jewellery-shop-frontend.vercel.app','https://jewellery-shop-admin.vercel.app/listproduct'],
-  methods: ["GET", "POST", "PUT", "PATCH", "UPDATE", "DELETE"],
-  credentials: true,
-}));
+//app.use(express.json());
+//app.use(cors());
+
 //https://jewellery-shop-frontend.vercel.app/login
 
 
+app.use(express.json());
+app.use(cors({
+  origin: ['*'],
+}));
 
 
 
