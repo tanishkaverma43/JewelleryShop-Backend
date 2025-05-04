@@ -22,7 +22,7 @@ app.use(cors({
 
 // Database Connection With MongoDB
 // mongoose.connect("");
-mongoose.connect("mongodb+srv://tanishkaverma43:89gnJR38dWbxuslu@cluster0.amcsipm.mongodb.net/e-commercee", {
+mongoose.connect("mongodb+srv://tanishkav384:W6kuS0qYEMObOiJn@cluster0.t3omiqv.mongodb.net/newmongodb", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
@@ -34,7 +34,6 @@ mongoose.connect("mongodb+srv://tanishkaverma43:89gnJR38dWbxuslu@cluster0.amcsip
 });
 // paste your mongoDB Connection string above with password
 // password should not contain '@' special character
-
 
 //Image Storage Engine 
 const storage = multer.diskStorage({
