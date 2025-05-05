@@ -7,24 +7,15 @@ const path = require("path");
 const cors = require("cors");
 const port = process.env.PORT || 4000;
 
-//app.use(express.json());
-//app.use(cors());
-
-//https://jewellery-shop-frontend.vercel.app/login
-
-
 app.use(express.json());
-app.use(cors({
-  origin: ['http://localhost:3000'],
-}));
-
-
+app.use(cors());
 
 // Database Connection With MongoDB
-// mongoose.connect("");
+mongoose.connect("mongodb+srv://tanishkaverma43:8mamVwkc2REjuDaM@cluster0.xjzt0jn.mongodb.net/e-commerce-new");
 
 // paste your mongoDB Connection string above with password
 // password should not contain '@' special character
+
 
 //Image Storage Engine 
 const storage = multer.diskStorage({
@@ -249,13 +240,8 @@ app.post("/removeproduct", async (req, res) => {
   res.json({ success: true, name: req.body.name })
 });
 
-mongoose.connect("mongodb+srv://tanishkav384:W6kuS0qYEMObOiJn@cluster0.t3omiqv.mongodb.net/newmongodb", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-.then(() => {
-  console.log("✅ MongoDB connected successfully");
-})
-.catch((error) => {
-  console.error("❌ MongoDB connection failed:", error.message);
+// Starting Express Server
+app.listen(port, (error) => {
+  if (!error) console.log("Server Running on port " + port);
+  else console.log("Error : ", error);
 });
